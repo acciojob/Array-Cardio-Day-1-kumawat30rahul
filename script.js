@@ -79,7 +79,7 @@ export function sortbylived() {
 // 6. sort Exercise
 // Sort the people alphabetically by last name and return the sorted array
 export function sortByLastName() {
-    people.sort(function(a, b) {
+    return people.sort(function(a, b) {
         var lastA = a.split(', ')[1].toUpperCase();
         var lastB = b.split(', ')[1].toUpperCase();
         if (lastA > lastB) {
