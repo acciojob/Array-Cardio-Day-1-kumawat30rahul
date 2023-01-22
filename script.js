@@ -42,11 +42,13 @@ export function myfilter() {
 // 2. Give us an array of the inventor first and last names (i.e. full name)
 // Ex: For the first inventor the full name will be 'Albert Einstein'
 export function map() {
+    let arr1 = []
     inventors.map(inventor => {
         let string = ""
         string = inventor.first +" "+ inventor.last
+        arr1.push(string)
     })
-    return string
+    return arr1
 }
 
 
@@ -68,13 +70,28 @@ export function reduce() {
 
 // 5. Sort the inventors by years lived and return the sorted array
 export function sortbylived() {
+    return inventors.sort((a,b) => {
+        return (b.passed - b.year) - (a.passed - a.year)
+    })
 
 }
 
 // 6. sort Exercise
 // Sort the people alphabetically by last name and return the sorted array
 export function sortByLastName() {
+    return inventors.sort((a,b) => {
+        const lastNamea = a.last
+        const lastNameb = b.last
+        if(lastNamea > lastNameb){
+            return 1
+        }
 
+        if(lastNamea < lastNameb){
+            return -1
+        }
+
+        return 0
+    })
 }
 
 // 7. Reduce Exercise
@@ -82,5 +99,12 @@ export function sortByLastName() {
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick'];
 
 export function reducedSum() {
+    return data.reduce((transports, item) => {
+        if (!transports[item]) {
+            transports[item] = 0;
+        }
+        transports[item]++;
+        return transports;
+    }, {});
     // Return an object containing transports as key and its number of occurances as the key's value
 }
