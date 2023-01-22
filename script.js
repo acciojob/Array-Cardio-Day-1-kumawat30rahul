@@ -80,13 +80,13 @@ export function sortbylived() {
 // Sort the people alphabetically by last name and return the sorted array
 export function sortByLastName() {
     return people.sort(function(a, b) {
-        var lastA = a.split(', ')[1].toUpperCase();
-        var lastB = b.split(', ')[1].toUpperCase();
-        if (lastA > lastB) {
-          return 1;
-        }
-        if (lastA < lastB) {
+        var firstA = a.split(', ')[0].toUpperCase();
+        var firstB = b.split(', ')[0].toUpperCase();
+        if (firstA < firstB) {
           return -1;
+        }
+        if (firstA > firstB) {
+          return 1;
         }
         return 0;
       });
