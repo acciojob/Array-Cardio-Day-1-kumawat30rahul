@@ -80,8 +80,8 @@ export function sortbylived() {
 // Sort the people alphabetically by last name and return the sorted array
 export function sortByLastName() {
     return inventors.sort((a, b) => {
-        const nameA = (a.first + " " + a.last).toLowerCase();
-        const nameB = (b.first + " " + b.last).toLowerCase();
+        const nameA = (a.first + " " + a.last);
+        const nameB = (b.first + " " + b.last);
         if (nameA < nameB) {
             return -1;
         }
