@@ -79,19 +79,17 @@ export function sortbylived() {
 // 6. sort Exercise
 // Sort the people alphabetically by last name and return the sorted array
 export function sortByLastName() {
-    return inventors.sort((a,b) => {
-        const lastNamea = a.last.toLowerCase()
-        const lastNameb = b.last.toLowerCase()
-        if(lastNamea > lastNameb){
-            return 1
+    return inventors.sort((a, b) => {
+        const nameA = (a.first + " " + a.last).toLowerCase();
+        const nameB = (b.first + " " + b.last).toLowerCase();
+        if (nameA < nameB) {
+            return -1;
         }
-
-        if(lastNamea < lastNameb){
-            return -1
+        if (nameA > nameB) {
+            return 1;
         }
-
-        return 0
-    })
+        return 0;
+    }).map(inventor => inventor.first + " " + inventor.last);
 }
 
 // 7. Reduce Exercise
