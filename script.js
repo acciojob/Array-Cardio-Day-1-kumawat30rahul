@@ -83,10 +83,10 @@ export function sortByLastName() {
         const nameA = (a.first + " " + a.last);
         const nameB = (b.first + " " + b.last);
         if (nameA < nameB) {
-            return -1;
+            return 1;
         }
         if (nameA > nameB) {
-            return 1;
+            return -1;
         }
         return 0;
     }).map(inventor => inventor.first + " " + inventor.last);
